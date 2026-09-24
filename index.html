@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f5">
+  <meta name="description" content="Guannan Hao — PhD candidate in Finance at the University of Sheffield. Projects in machine learning, credit risk and financial data.">
+  <title>Guannan Hao · Finance & Data</title>
+  <style>
+    :root {
+      --page: #f7f7f5;
+      --surface: #fffefa;
+      --ink: #29323a;
+      --muted: #69737c;
+      --line: #e6e5e0;
+      --accent: #d48a08;
+      --accent-soft: #fff5e3;
+      --blue: #315b79;
+      --shadow: 0 16px 50px rgba(32, 43, 52, .055), 0 2px 8px rgba(32, 43, 52, .025);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+
+    .site {
+      width: min(960px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 32px 2px 26px;
+    }
+    .wordmark {
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 750;
+      letter-spacing: -.045em;
+      text-decoration: none;
+    }
+    .wordmark span { color: var(--accent); }
+    .navigation {
+      display: flex;
+      gap: 3px;
+      padding: 4px;
+      border: 1px solid #e9e9e6;
+      border-radius: 13px;
+      background: #efefec;
+    }
+    .navigation a {
+      min-width: 88px;
+      padding: 7px 14px;
+      border-radius: 9px;
+      color: #59626a;
+      font-size: 13px;
+      font-weight: 650;
+      text-align: center;
+      text-decoration: none;
+      transition: background .18s, color .18s, box-shadow .18s;
+    }
+    .navigation a:hover { color: var(--ink); }
+    .navigation a.active {
+      background: var(--surface);
+      color: var(--ink);
+      box-shadow: 0 1px 4px rgba(22, 30, 38, .11);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 275px minmax(0, 1fr);
+      gap: 52px;
+      align-items: center;
+      padding: 40px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .portrait {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 17px;
+      background: linear-gradient(145deg, #e9e8e1, #f1eee5 70%, #e7d9bd);
+      color: #bd9a62;
+      font-size: 72px;
+      font-weight: 750;
+      letter-spacing: -.09em;
+    }
+    .portrait img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+    }
+    .eyebrow {
+      margin: 0 0 15px;
+      color: #a66d08;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0 0 19px;
+      font-size: clamp(37px, 5vw, 49px);
+      font-weight: 730;
+      letter-spacing: -.055em;
+      line-height: 1.08;
+    }
+    .role {
+      margin: 0 0 3px;
+      font-size: 18px;
+      font-weight: 650;
+      letter-spacing: -.025em;
+    }
+    .school {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .rule {
+      width: 46px;
+      height: 2px;
+      margin: 23px 0;
+      border: 0;
+      border-radius: 1px;
+      background: var(--accent);
+    }
+    .intro {
+      max-width: 42ch;
+      margin: 0;
+      color: #48545d;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 21px;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+    .projects { padding: 71px 2px 0; scroll-margin-top: 30px; }
+    .section-heading { margin-bottom: 20px; }
+    .section-label {
+      margin: 0 0 6px;
+      color: #a66d08;
+      font-size: 11px;
+      font-weight: 750;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin: 0;
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: -.04em;
+      line-height: 1.25;
+    }
+    .project-card {
+      padding: 30px 34px 33px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+    .project-type {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 5px 10px;
+      border-radius: 7px;
+      background: var(--accent-soft);
+      color: #9b670b;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+    h3 {
+      margin: 0 0 10px;
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: -.035em;
+      line-height: 1.3;
+    }
+    .project-copy {
+      max-width: 70ch;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .project-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 42px;
+      padding: 10px 15px;
+      border: 1px solid #d9dfe2;
+      border-radius: 10px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-decoration: none;
+      transition: transform .18s, border-color .18s, background .18s;
+    }
+    .button:hover { transform: translateY(-2px); border-color: #aebbc4; }
+    .button.primary {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: #fff;
+    }
+    .button.primary:hover { background: #254b69; }
+    .button svg { width: 15px; height: 15px; flex: none; }
+    footer {
+      padding: 42px 3px 36px;
+      color: #8b9297;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .site { width: min(540px, calc(100% - 32px)); }
+      .topbar { padding: 20px 0 18px; }
+      .navigation a { min-width: 66px; padding: 7px 10px; }
+      .hero { grid-template-columns: 1fr; gap: 28px; padding: 24px; }
+      .portrait { width: min(100%, 290px); aspect-ratio: 4 / 4.6; margin: 0 auto; }
+      .eyebrow { margin-bottom: 10px; }
+      h1 { margin-bottom: 15px; }
+      .projects { padding-top: 54px; }
+      .project-card { padding: 24px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0s !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header class="topbar">
+      <a class="wordmark" href="#home" aria-label="Guannan Hao, home">GH<span>.</span></a>
+      <nav class="navigation" aria-label="Main navigation">
+        <a class="active" href="#home" data-nav="home">Home</a>
+        <a href="#projects" data-nav="projects">Projects</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home" aria-labelledby="name">
+        <div class="portrait" aria-label="Portrait area">
+          GH
+          <!-- Rename your photo to portrait.jpg and put it beside index.html. -->
+          <img src="portrait.jpg" alt="Portrait of Guannan Hao" onerror="this.remove()">
+        </div>
+        <div>
+          <p class="eyebrow">Finance · Data · Machine Learning</p>
+          <h1 id="name">Guannan Hao</h1>
+          <p class="role">PhD Candidate in Finance</p>
+          <p class="school">University of Sheffield</p>
+          <hr class="rule">
+          <p class="intro">I work at the intersection of finance and machine learning, with a focus on credit risk and lending decisions.</p>
+          <a class="text-link" href="#projects">Explore my projects <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="projects" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <p class="section-label">Selected work</p>
+          <h2 id="projects-title">Projects</h2>
+        </div>
+        <article class="project-card">
+          <span class="project-type">CREDIT RISK · ALTERNATIVE DATA</span>
+          <h3>Alternative Data and Credit Risk</h3>
+          <p class="project-copy">A hands-on project comparing Logit, gradient boosting and neural networks across 1.5 million credit applications. Explore model results and what they could mean for lending decisions.</p>
+          <div class="project-actions">
+            <a class="button primary" href="#projects" data-outbound="github" target="_blank" rel="noopener noreferrer">
+              View the GitHub project
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+            <a class="button" href="#projects" data-outbound="streamlit" target="_blank" rel="noopener noreferrer">
+              Explore interactive results
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>Guannan Hao · Sheffield, UK</footer>
+  </div>
+
+  <script>
+    // STEP 1: Paste your exact links between the quotation marks below.
+    const projectLinks = {
+      github: "",
+      streamlit: ""
+    };
+
+    document.querySelectorAll("[data-outbound]").forEach(link => {
+      const name = link.dataset.outbound;
+      const url = projectLinks[name].trim();
+      if (url) {
+        link.href = url;
+      } else {
+        link.removeAttribute("target");
+        link.addEventListener("click", event => {
+          event.preventDefault();
+          alert(`Add your ${name === "github" ? "GitHub repository" : "Streamlit app"} URL in index.html first.`);
+        });
+      }
+    });
+
+    const navLinks = document.querySelectorAll("[data-nav]");
+    const setActive = id => navLinks.forEach(link => link.classList.toggle("active", link.dataset.nav === id));
+    navLinks.forEach(link => link.addEventListener("click", () => setActive(link.dataset.nav)));
+    if (location.hash === "#projects") setActive("projects");
+  </script>
+</body>
+</html>
