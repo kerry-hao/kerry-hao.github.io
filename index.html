@@ -109,14 +109,6 @@
       object-fit: cover;
       object-position: center 35%;
     }
-    .eyebrow {
-      margin: 0 0 15px;
-      color: #a66d08;
-      font-size: 11px;
-      font-weight: 750;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
     h1 {
       margin: 0 0 19px;
       font-size: clamp(37px, 5vw, 49px);
@@ -132,7 +124,7 @@
     }
     .school {
       margin: 0;
-      color: var(--muted);
+      color: #48545d;
       font-size: 15px;
     }
     .rule {
@@ -146,7 +138,7 @@
     .intro {
       max-width: 42ch;
       margin: 0;
-      color: #48545d;
+      color: #a66d08;
       font-size: 16px;
       line-height: 1.75;
     }
@@ -162,18 +154,11 @@
     }
     .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
 
-    .projects { padding: 71px 2px 0; scroll-margin-top: 30px; }
+    .projects { padding: 26px 2px 0; scroll-margin-top: 30px; }
     .section-heading { margin-bottom: 20px; }
-    .section-label {
-      margin: 0 0 6px;
-      color: #a66d08;
-      font-size: 11px;
-      font-weight: 750;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
     h2 {
       margin: 0;
+      color: #a66d08;
       font-size: 27px;
       font-weight: 700;
       letter-spacing: -.04em;
@@ -250,9 +235,8 @@
       .navigation a { min-width: 66px; padding: 7px 10px; }
       .hero { grid-template-columns: 1fr; gap: 28px; padding: 24px; }
       .portrait { width: min(100%, 290px); aspect-ratio: 4 / 4.6; margin: 0 auto; }
-      .eyebrow { margin-bottom: 10px; }
       h1 { margin-bottom: 15px; }
-      .projects { padding-top: 54px; }
+      .projects { padding-top: 18px; }
       .project-card { padding: 24px; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -279,31 +263,29 @@
           <img src="portrait.jpg" alt="Portrait of Guannan Hao" onerror="this.remove()">
         </div>
         <div>
-          <p class="eyebrow">Finance · Data · Machine Learning</p>
           <h1 id="name">Guannan Hao</h1>
           <p class="role">PhD Candidate in Finance (FinTech)</p>
           <p class="school">University of Sheffield</p>
           <hr class="rule">
-          <p class="intro">I work at the intersection of finance and machine learning, with a focus on financial technology and risk predictions. </p>
+          <p class="intro">I work at the intersection of finance and machine learning, with a focus on <strong>financial technology</strong> and risk predictions.</p>
           <a class="text-link" href="#projects">Explore my projects <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 
       <section class="projects" id="projects" aria-labelledby="projects-title">
         <div class="section-heading">
-          <p class="section-label">Selected work</p>
-          <h2 id="projects-title">Projects</h2>
+          <h2 id="projects-title">Selected projects:</h2>
         </div>
         <article class="project-card">
           <span class="project-type">CREDIT RISK · ALTERNATIVE DATA</span>
-          <h3>Alternative Data and Credit Risk</h3>
-          <p class="project-copy">A hands-on project comparing Logit, gradient boosting and neural networks across 1.5 million credit applications. Explore model results and what they could mean for lending decisions.</p>
+          <h3>The Unequal Value and Cost of Alternative Data in Credit Risk Prediction</h3>
+          <p class="project-copy">A credit-risk prediction study comparing Penalised Logit, Gradient Boosting and Neural Networks across 1.52 million applications with innovative data. Explore model results and what they could mean for borrowers and lenders.</p>
           <div class="project-actions">
             <a class="button primary" href="#projects" data-outbound="github" target="_blank" rel="noopener noreferrer">
               View the GitHub project
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
             </a>
-            <a class="button" href="#projects" data-outbound="streamlit" target="_blank" rel="noopener noreferrer">
+            <a class="button primary" href="#projects" data-outbound="streamlit" target="_blank" rel="noopener noreferrer">
               Explore interactive results
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
             </a>
