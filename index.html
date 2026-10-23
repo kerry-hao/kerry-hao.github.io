@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f7f5">
-  <meta name="description" content="Guannan Hao — PhD candidate in Finance at the University of Sheffield. Projects in machine learning, risk and financial data.">
+  <meta name="description" content="Guannan Hao — PhD candidate in Finance at the University of Sheffield. Projects in fraud detection, credit risk, equity volatility and natural language processing.">
   <title>Guannan Hao · Finance & Data</title>
   <style>
     :root {
@@ -163,6 +163,7 @@
       letter-spacing: -.04em;
       line-height: 1.25;
     }
+    .project-list { display: grid; gap: 22px; }
     .project-card {
       padding: 30px 34px 33px;
       border: 1px solid var(--line);
@@ -194,6 +195,7 @@
       color: var(--muted);
       font-size: 14px;
       line-height: 1.7;
+      overflow-wrap: break-word;
     }
     .project-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
     .button {
@@ -275,21 +277,71 @@
         <div class="section-heading">
           <h2 id="projects-title">Selected projects:</h2>
         </div>
-        <article class="project-card">
-          <span class="project-type">Alternative Data</span>
-          <h3>The Unequal Value and Cost of Alternative Data in Credit Risk Prediction</h3>
-          <p class="project-copy">A credit-risk prediction study comparing Penalised Logit, Gradient Boosting and Neural Networks across 1.52 million applications with innovative data. Explore model results and what they could mean for borrowers and lenders.</p>
-          <div class="project-actions">
-            <a class="button primary" href="#projects" data-outbound="github" target="_blank" rel="noopener noreferrer">
-              View the GitHub project
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-            </a>
-            <a class="button primary" href="#projects" data-outbound="streamlit" target="_blank" rel="noopener noreferrer">
-              Explore interactive results
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-            </a>
-          </div>
-        </article>
+        <div class="project-list">
+          <article class="project-card">
+            <span class="project-type">Alternative Data</span>
+            <h3>The Unequal Value and Cost of Alternative Data in Credit Risk Prediction</h3>
+            <p class="project-copy">A credit-risk prediction study comparing Penalised Logit, Gradient Boosting and Neural Networks across 1.52 million applications with alternative data. Explore model results and what they could mean for borrowers and lenders.</p>
+            <div class="project-actions">
+              <a class="button primary" href="https://github.com/kerry-hao/home-credit-alternative-data" target="_blank" rel="noopener noreferrer">
+                View the GitHub project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+              <a class="button primary" href="https://kerry-hao-home-credit.streamlit.app/" target="_blank" rel="noopener noreferrer">
+                Explore interactive results
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-type">Fraud Detection</span>
+            <h3>Transaction Fraud Detection</h3>
+            <p class="project-copy">A transaction-fraud detection project combining payment, identity and device data to identify suspicious e-commerce activity. Compares Logistic Regression and LightGBM, and examines how much fraud can be flagged when only a limited share of transactions can be reviewed.</p>
+            <div class="project-actions">
+              <a class="button primary" href="https://github.com/kerry-hao/transaction-fraud-detection" target="_blank" rel="noopener noreferrer">
+                View the GitHub project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-type">Market Microstructure</span>
+            <h3>Stock Volatility Prediction</h3>
+            <p class="project-copy">A short-term equity-volatility forecasting project using order-book and trade data. Connects bid–ask spreads, order imbalance and trading activity with future price uncertainty, and compares LightGBM with volatility-persistence benchmarks across held-out trading windows.</p>
+            <div class="project-actions">
+              <a class="button primary" href="https://github.com/kerry-hao/stock-volatility-lab" target="_blank" rel="noopener noreferrer">
+                View the GitHub project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-type">Credit Risk</span>
+            <h3>American Express Default Prediction</h3>
+            <p class="project-copy">A credit-card default prediction project using customers’ monthly statement histories. Turns payment, balance, spending and delinquency patterns into borrower-level features, with LightGBM, customer-level cross-validation and ensemble predictions to assess future repayment risk.</p>
+            <div class="project-actions">
+              <a class="button primary" href="https://github.com/kerry-hao/amex-default-prediction" target="_blank" rel="noopener noreferrer">
+                View the GitHub project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-type">Natural Language Processing</span>
+            <h3>AI-Generated Text Detection</h3>
+            <p class="project-copy">A natural-language processing project distinguishing human-written essays from AI-generated text. Compares TF-IDF and Logistic Regression with a DeBERTa transformer, using shared validation folds and source-level error analysis to examine the language patterns that help separate the two.</p>
+            <div class="project-actions">
+              <a class="button primary" href="https://github.com/kerry-hao/ai-text-detection-lab" target="_blank" rel="noopener noreferrer">
+                View the GitHub project
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
 
@@ -297,30 +349,18 @@
   </div>
 
   <script>
-    //
-    const projectLinks = {
-      github: "https://github.com/kerry-hao/home-credit-alternative-data",
-      streamlit: "https://kerry-hao-home-credit.streamlit.app/"
-    };
-
-    document.querySelectorAll("[data-outbound]").forEach(link => {
-      const name = link.dataset.outbound;
-      const url = projectLinks[name].trim();
-      if (url) {
-        link.href = url;
-      } else {
-        link.removeAttribute("target");
-        link.addEventListener("click", event => {
-          event.preventDefault();
-          alert(`Add your ${name === "github" ? "GitHub repository" : "Streamlit app"} URL in index.html first.`);
-        });
-      }
+    const navLinks = document.querySelectorAll('[data-nav]');
+    const setActive = id => navLinks.forEach(link => {
+      const active = link.dataset.nav === id;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
     });
 
-    const navLinks = document.querySelectorAll("[data-nav]");
-    const setActive = id => navLinks.forEach(link => link.classList.toggle("active", link.dataset.nav === id));
-    navLinks.forEach(link => link.addEventListener("click", () => setActive(link.dataset.nav)));
-    if (location.hash === "#projects") setActive("projects");
+    navLinks.forEach(link => link.addEventListener('click', () => setActive(link.dataset.nav)));
+    const syncNavigation = () => setActive(location.hash === '#projects' ? 'projects' : 'home');
+    window.addEventListener('hashchange', syncNavigation);
+    syncNavigation();
   </script>
 </body>
 </html>
